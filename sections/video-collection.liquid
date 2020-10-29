@@ -1,0 +1,134 @@
+<!-- Add the slick-theme.css if you want default styling -->
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+<!-- Add the slick-theme.css if you want default styling -->
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
+
+
+
+
+<div class="page-width">
+    <div class="video-collection">
+        <div class="left-block">
+            <div class="youtube-block">
+                <iframe id="player"
+                        width="640" height="360"
+                        src="https://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1"
+                        frameborder="0"
+                ></iframe>
+            </div>
+
+            <div class="slider-caption-wrapper">
+                <div class="slider-caption">current product shown</div>
+            </div>
+
+            <div class="img-thumb">
+                <div class="slider-thumb">
+                    <div class="my-gutter"><img src="http://services.bz/demo/images/t1.png"></div>
+                    <div class="my-gutter"><img src="http://services.bz/demo/images/t2.png"></div>
+                    <div class="my-gutter"><img src="http://services.bz/demo/images/t3.png"></div>
+                    <div class="my-gutter"><img src="http://services.bz/demo/images/t4.png"></div>
+                    <div class="my-gutter"><img src="http://services.bz/demo/images/t5.png"></div>
+                    <div class="my-gutter"><img src="http://services.bz/demo/images/t2.png"></div>
+                    <div class="my-gutter"><img src="http://services.bz/demo/images/t3.png"></div>
+                </div> 
+            </div>
+        </div>
+
+        <div class="right-block">
+            <div class="img-slider">
+                <div class="img-column-1">
+                    <img src="http://services.bz/demo/images/t1.png">
+                </div>
+                <div class="img-column-2">
+                    <img src="http://services.bz/demo/images/t2.png">
+                    <img src="http://services.bz/demo/images/t3.png">
+                    <img src="http://services.bz/demo/images/t4.png">
+                    <img src="http://services.bz/demo/images/t5.png">
+                </div>
+            </div>
+
+            <div class="prod-description">
+                <h3 class="pd-h3">product selected name</h3>
+                <h6 class="pd-h6">description</h6>
+                <p class="pd-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum neque nesciunt, itaque ab dolores eos ipsum provident impedit reprehenderit perferendis totam facilis at praesentium repellat vel aspernatur autem. Debitis, repellendus.</p>
+            </div>
+
+            <div class="shop-btn-wrapper">
+                <div class="btn-wrapper">
+                    <a href="#" class="btn hero__btn btn-block" aria-label="add to bag">ADD TO BAG</a>
+                </div>
+                
+                <div class="btn-wrapper">
+                    <a href="#" class="btn hero__btn btn-block btn-grey" aria-label="add to wish list">ADD TO WISH LIST</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<script>
+    // 2. This code loads the IFrame Player API code asynchronously.
+    var tag = document.createElement('script');
+
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    // 3. This function creates an <iframe> (and YouTube player)
+    //    after the API code downloads.
+    var player;
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('player', {
+        events: {
+          'onReady': onPlayerReady,
+          'onStateChange': onPlayerStateChange
+        }
+      });
+    }
+
+    // 4. The API will call this function when the video player is ready.
+    function onPlayerReady(event) {
+      event.target.playVideo();
+    }
+
+    // 5. The API calls this function when the player's state changes.
+    //    The function indicates that when playing a video (state=1),
+    //    the player should play for six seconds and then stop.
+    var done = false;
+    function onPlayerStateChange(event) {
+      if (event.data == YT.PlayerState.PLAYING && !done) {
+        setTimeout(stopVideo, 6000);
+        done = true;
+      }
+    }
+    function stopVideo() {
+      player.stopVideo();
+    }
+  </script>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<script>
+    $('.slider-thumb').slick({
+        infinite: true,
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        arrows: true,
+        focusOnSelect: true
+    });
+    $('.slider-thumb').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+  console.log(nextSlide);
+});
+</script>
+
+
