@@ -11,11 +11,8 @@
     <div class="video-collection">
         <div class="left-block">
             <div class="youtube-block">
-                <iframe id="player"
-                        width="640" height="360"
-                        src="https://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1"
-                        frameborder="0"
-                ></iframe>
+                <iframe id="player" width="640" height="360"
+                    src="https://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1" frameborder="0"></iframe>
             </div>
 
             <div class="slider-caption-wrapper">
@@ -24,43 +21,67 @@
 
             <div class="img-thumb">
                 <div class="slider-thumb">
-                    <div class="my-gutter"><img src="http://services.bz/demo/images/t1.png"></div>
-                    <div class="my-gutter"><img src="http://services.bz/demo/images/t2.png"></div>
-                    <div class="my-gutter"><img src="http://services.bz/demo/images/t3.png"></div>
-                    <div class="my-gutter"><img src="http://services.bz/demo/images/t4.png"></div>
-                    <div class="my-gutter"><img src="http://services.bz/demo/images/t5.png"></div>
-                    <div class="my-gutter"><img src="http://services.bz/demo/images/t2.png"></div>
-                    <div class="my-gutter"><img src="http://services.bz/demo/images/t3.png"></div>
-                </div> 
+                    <div class="my-gutter">
+                        <img
+                            src="https://cdn.shopify.com/s/files/1/0500/4102/8774/files/stylish-woman-smiling.jpg?v=1604055850">
+                    </div>
+                    <div class="my-gutter"><img
+                            src="https://cdn.shopify.com/s/files/1/0500/4102/8774/files/twirling-hair-and-batting-eyes.jpg?v=1604055850">
+                    </div>
+                    <div class="my-gutter"><img
+                            src="https://cdn.shopify.com/s/files/1/0500/4102/8774/files/woman-portrait-on-pink-brick.jpg?v=1604055850">
+                    </div>
+                    <div class="my-gutter"><img
+                            src="https://cdn.shopify.com/s/files/1/0500/4102/8774/files/woman-blue-wall-portrait.jpg?v=1604055849">
+                    </div>
+                    <div class="my-gutter"><img
+                            src="https://cdn.shopify.com/s/files/1/0500/4102/8774/files/lady-in-leather-jacket-in-the-city.jpg?v=1604055849">
+                    </div>
+                    <div class="my-gutter"><img
+                            src="https://cdn.shopify.com/s/files/1/0500/4102/8774/files/fashion-model-in-fur.jpg?v=1604055850">
+                    </div>
+                    <div class="my-gutter"><img
+                            src="https://cdn.shopify.com/s/files/1/0500/4102/8774/files/model-in-gold-fashion.jpg?v=1604055849">
+                    </div>
+                </div>
             </div>
         </div>
 
         <div class="right-block">
             <div class="img-slider">
                 <div class="img-column-1">
-                    <img src="http://services.bz/demo/images/t1.png">
+                    <img
+                        src="https://cdn.shopify.com/s/files/1/0500/4102/8774/files/stylish-woman-smiling.jpg?v=1604055850">
                 </div>
                 <div class="img-column-2">
-                    <img src="http://services.bz/demo/images/t2.png">
-                    <img src="http://services.bz/demo/images/t3.png">
-                    <img src="http://services.bz/demo/images/t4.png">
-                    <img src="http://services.bz/demo/images/t5.png">
+                    <img
+                        src="https://cdn.shopify.com/s/files/1/0500/4102/8774/files/twirling-hair-and-batting-eyes.jpg?v=1604055850">
+                    <img
+                        src="https://cdn.shopify.com/s/files/1/0500/4102/8774/files/woman-portrait-on-pink-brick.jpg?v=1604055850">
+                    <img
+                        src="https://cdn.shopify.com/s/files/1/0500/4102/8774/files/woman-blue-wall-portrait.jpg?v=1604055849">
+                    <img
+                        src="https://cdn.shopify.com/s/files/1/0500/4102/8774/files/fashion-model-in-fur.jpg?v=1604055850">
                 </div>
             </div>
 
             <div class="prod-description">
                 <h3 class="pd-h3">product selected name</h3>
                 <h6 class="pd-h6">description</h6>
-                <p class="pd-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum neque nesciunt, itaque ab dolores eos ipsum provident impedit reprehenderit perferendis totam facilis at praesentium repellat vel aspernatur autem. Debitis, repellendus.</p>
+                <p class="pd-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum neque nesciunt,
+                    itaque ab dolores eos ipsum provident impedit reprehenderit perferendis totam facilis at praesentium
+                    repellat vel aspernatur autem. Debitis, repellendus.</p>
             </div>
 
             <div class="shop-btn-wrapper">
                 <div class="btn-wrapper">
-                    <a href="#" class="btn hero__btn btn-block" aria-label="add to bag">ADD TO BAG</a>
+                    <button type="submit" name="add" class="btn hero__btn btn-block" onclick="myAddCart();"
+                        aria-label="add to bag">ADD TO BAG</button>
                 </div>
-                
+
                 <div class="btn-wrapper">
-                    <a href="#" class="btn hero__btn btn-block btn-grey" aria-label="add to wish list">ADD TO WISH LIST</a>
+                    <a href="#" class="btn hero__btn btn-block btn-grey" aria-label="add to wish list">ADD TO WISH
+                        LIST</a>
                 </div>
             </div>
 
@@ -83,34 +104,37 @@
     // 3. This function creates an <iframe> (and YouTube player)
     //    after the API code downloads.
     var player;
+
     function onYouTubeIframeAPIReady() {
-      player = new YT.Player('player', {
-        events: {
-          'onReady': onPlayerReady,
-          'onStateChange': onPlayerStateChange
-        }
-      });
+        player = new YT.Player('player', {
+            events: {
+                'onReady': onPlayerReady,
+                'onStateChange': onPlayerStateChange
+            }
+        });
     }
 
     // 4. The API will call this function when the video player is ready.
     function onPlayerReady(event) {
-      event.target.playVideo();
+        event.target.playVideo();
     }
 
     // 5. The API calls this function when the player's state changes.
     //    The function indicates that when playing a video (state=1),
     //    the player should play for six seconds and then stop.
     var done = false;
+
     function onPlayerStateChange(event) {
-      if (event.data == YT.PlayerState.PLAYING && !done) {
-        setTimeout(stopVideo, 6000);
-        done = true;
-      }
+        if (event.data == YT.PlayerState.PLAYING && !done) {
+            setTimeout(stopVideo, 6000);
+            done = true;
+        }
     }
+
     function stopVideo() {
-      player.stopVideo();
+        player.stopVideo();
     }
-  </script>
+</script>
 
 
 
@@ -126,9 +150,21 @@
         arrows: true,
         focusOnSelect: true
     });
-    $('.slider-thumb').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-  console.log(nextSlide);
-});
+    $('.slider-thumb').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+        console.log(nextSlide);
+    });
 </script>
 
 
+<script>
+    function myAddCart() {
+        console.log('Its Working.');
+        jQuery.post('/cart/add.js', {
+            items: [{
+                quantity: 1,
+                id: 5886635245734
+            }]
+
+        });
+    }
+</script>
